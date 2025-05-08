@@ -1,242 +1,395 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZehirMedyaTR - Sosyal Medya Hizmetleri</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+<head><!-- WhatsApp Butonu -->
+<a href="https://wa.me/66963159164" class="whatsapp-fixed" target="_blank">
+  💬 WhatsApp
+</a>
 
-    body {
-        background-color: #000000; /* Arka plan siyah kalıyor */
-        color: #ffffff; /* Genel yazılar beyaz */
-        font-family: 'Poppins', sans-serif;
-    }
-    .navbar {
-        background-color: #26943e;
-    }
-    .btn-main {
-        background-color: #2c9695;
-        color: #ffffff;
-        border-radius: 30px;
-        padding: 10px 20px;
-    }
-    .btn-main:hover {
-        background-color: #c00;
-        color: #ffffff;
-    }
-    .section {
-        padding: 60px 0;
-    }
+<!-- CSS (aynı dosyada, head tag'ine ya da body'nin sonuna koyabilirsin) -->
+<style>
+  .whatsapp-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: background 0.3s ease;
+  }
 
-    /* Sadece Hizmetler kısmındaki kutular (Instagram, TikTok vs.) beyaz olacak */
-    #services .card {
-        background-color: rgb(255, 255, 255);
-        color: #000000;
-        border: none;
-        border-radius: 10px;
-        transition: 0.3s;
-    }
-
-    /* Fiyatlar kısmındaki kutular (1000 takipçi vb.) yine siyah kalsın istiyorsan bunu değiştirmezsin */
-    #pricing .card {
-        background-color: #ffffff; /* siyah tonunda */
-        color: #000000;
-        border: none;
-        border-radius: 10px;
-        transition: 0.3s;
-    }
-
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0px 4px 20px rgba(255, 0, 0, 0.4);
-    }
-
-    footer {
-        background-color: #111;
-        padding: 20px 0;
-        text-align: left;
-        font-size: 14px;
-        color: #939393;
-    }
+  .whatsapp-fixed:hover {
+    background-color: #1ebe5d;
+  }
 </style>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZehirMarket - Brawl Stars, Valorant, eFootball</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        header {
+            background-color: #111;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #00d3ff;
+        }
+        header h1 {
+            color: #00fff1;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ff5e00;
+        }
+        .hero {
+            background: url('https://i.hizliresim.com/kb2tv0j.jpg') center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 38px;
+            background: linear-gradient(to right, #fff, #ff5e00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .kategori {
+            padding: 40px 20px;
+        }
+        .kategori h3 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff5e00;
+            display: inline-block;
+        }
+        .urunler {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .kart {
+            background-color: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 0 10px #222;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .kart:hover {
+            transform: scale(1.05);
+        }
+        .kart img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .kart h4 {
+            margin-top: 10px;
+            color: #ff5e00;
+        }
+        .fiyat {
+            color: #0f0;
+            margin: 8px 0;
+        }
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #888;
+        }
     </style>
 </head>
-
-<body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand text-white" href="#">ZehirMedyaTR</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon text-white"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link text-white" href="#services">Hizmetler</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#pricing">Fiyatlar</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#order">Sipariş Ver</a></li>
-      </ul>
-    </div>
+<body><div class="scroll-container">
+  <div class="scroll-text">
+    ⚡ EFSANE İNDRİMLERİ YAKALA ⚡ EFSANE İNDRİMLERİ YAKALA ⚡ EFSANE İNDRİMLERİ YAKALA ⚡ EFSANE İNDRİMLERİ YAKALA ⚡⚡ EFSANE İNDRİMLERİ YAKALA ⚡ EFSANE İNDRİMLERİ YAKALA ⚡ EFSANE İNDRİMLERİ YAKALA ⚡ EFSANE İNDRİMLERİ YAKALA ⚡
   </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="section text-center">
-    <div class="container">
-        <h1 class="display-4">Sosyal Medyada Zirveye<br> Zehir Gibi Yüksel!</h1>
-        <p class="lead mt-3">Takipçi, Beğeni, İzlenme Hizmetleri | Hızlı - Güvenilir - 7/24 Destek</p>
-        <a href="#order" class="btn btn-main mt-4">Hemen Sipariş Ver</a>
-    </div>
-</section>
-
-<!-- Services -->
-<section id="services" class="section text-center">
-    <div class="container">
-        <h2>Hizmetlerimiz</h2>
-        <div class="row mt-5">
-            <div class="col-md-3">
-                <div class="card p-4">
-                    <h4>Instagram</h4>
-                    <p>Takipçi, Beğeni, İzlenme</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card p-4">
-                    <h4>TikTok</h4>
-                    <p>Takipçi, İzlenme, Beğeni</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card p-4">
-                    <h4>YouTube</h4>
-                    <p>Abone, İzlenme, Beğeni</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card p-4">
-                    <h4>Telegram</h4>
-                    <p>Kanal & Grup Üyeleri</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Pricing -->
-<section><div class="container text-center py-5">
-    <h2 class="text-white mb-5">Fiyatlarımız</h2>
-    <div class="row g-4">
-
-        <!-- Instagram Card -->
-        <div class="col-md-4">
-            <div class="card p-4">
-                <h4>Instagram</h4>
-                <h5>1000 Instagram Takipçi</h5>
-                <p class="mt-3">Sadece <strong>80 ₺</strong></p>
-
-                <button class="btn btn-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#instaDetails">
-                    Daha Fazla
-                </button>
-
-                <div class="collapse mt-2" id="instaDetails">
-                    <ul class="list-group">
-                        <li class="list-group-item">1000 Beğeni - 39₺</li>
-                        <li class="list-group-item">1000 İzlenme   - 39₺</li>
-                        <li class="list-group-item">SİPARİŞ ETCEĞİNİZ ZAMAN 1000 TAKİPÇİ DEMENİZE GEREK YOK İSTEDİGİNİZ TUTARI VE HİZMETİ GİRİN. örnek; telegram,@zehirmedia,kanal üyesi, 6000 adet.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- TikTok Card -->
-        <div class="col-md-4">
-            <div class="card p-4">
-                <h4>TikTok</h4>
-                <h5>1000 TikTok Takipçi</h5>
-                <p class="mt-3">Sadece <strong>99 ₺</strong></p>
-
-                <button class="btn btn-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#tiktokDetails">
-                    Daha Fazla
-                </button>
-
-                <div class="collapse mt-2" id="tiktokDetails">
-                    <ul class="list-group">
-                        <li class="list-group-item">1000 Beğeni - 39₺</li>
-                        <li class="list-group-item">1000 İzlenme - 39₺</li>
-                        <li class="list-group-item">SİPARİŞ ETCEĞİNİZ ZAMAN 1000 TAKİPÇİ DEMENİZE GEREK YOK İSTEDİGİNİZ TUTARI VE HİZMETİ GİRİN. örnek; telegram,@zehirmedia,kanal üyesi, 6000 adet</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Telegram Card -->
-        <div class="col-md-4">
-            <div class="card p-4">
-                <h4>Telegram</h4>
-                <h5>1000 Telegram Üye</h5>
-                <p class="mt-3">Sadece <strong>49 ₺</strong></p>
-
-                <button class="btn btn-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#telegramDetails">
-                    Daha Fazla
-                </button>
-
-                <div class="collapse mt-2" id="telegramDetails">
-                    <ul class="list-group">
-                        <li class="list-group-item">500 Üye - 30₺</li>
-                        <li class="list-group-item">5000 Üye - 249₺</li>
-                    <li class="list-group-item">3000 Üye - 149₺</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-<div class="col-md-4">
-            <div class="card p-4">
-                <h4>Youtube</h4>
-                <h5>1000 Youtube Abone</h5>
-                <p class="mt-3">Sadece <strong>269 ₺</strong></p>
-
-                <button class="btn btn-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#youtubeDetails">
-                    Daha Fazla
-                </button>
-
-                <div class="collapse mt-2" id="youtubeDetails">
-                    <ul class="list-group">
-                        <li class="list-group-item">1000 Like - 39₺</li>
-                        <li class="list-group-item">1000 İzlenme - 89₺</li>
-                        <li class="list-group-item">SİPARİŞ ETCEĞİNİZ ZAMAN 1000 TAKİPÇİ DEMENİZE GEREK YOK İSTEDİGİNİZ TUTARI VE HİZMETİ GİRİN. örnek; telegram,@zehirmedia,kanal üyesi, 6000 adetN.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-</section> 
 
+<style>
+  .scroll-container {
+    width: 100%;
+    overflow: hidden;
+    background: black;
+    color: #00aaff;
+    white-space: nowrap;
+  }
 
+  .scroll-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 15s linear infinite;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+  }
 
-<!-- Order Form -->
-<section id="order" class="section text-center">
-    <div class="container">
-        <h2>Sipariş Ver</h2>
-        <form action="https://wa.me/66963159164" method="get" target="_blank" class="mt-4">
-            <div class="row g-3">
-                <div class="col-md-4 offset-md-4">
-                    <input type="text" name="text" class="form-control" placeholder="Sosyal medya + Kullanıcı Adı + Hizmet + Adet" required>
-                </div>
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+    <header>
+        <img src="hayr%C4%B1.png" alt="">
+        <nav>
+            <a href="#">Ana Sayfa</a>
+            <a href="#brawlstars">Brawl Stars</a>
+            <a href="#valorant">Valorant</a>
+            <a href="#efootball">eFootball</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Ucuza ve Güvenli Alışverişin Adresi</h2>
+    </section>
+
+    <section class="kategori" id="brawlstars">
+        <h3>Brawl Stars</h3>
+        <div class="urunler">
+            <div class="kart">
+                <img src="random%20bs..jpg" alt="Amber Random Hesap">
+                <h4>10.000 Kupa Garantili</h4>
+                <h5>RANDOM HESAP</h5>
+                <p class="fiyat">69 TL</p>
+                <style>
+  .whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #1ebe5d;
+  }
+</style>
+
+<a href="https://wa.me/66963159164?text=Merhaba ." target="_blank" class="whatsapp-btn">Satın Al</a>
+
             </div>
-            <button type="submit" class="btn btn-main mt-4">WhatsApp'tan Gönder</button>
-        </form>
-    </div>
-</section>
+            <div class="kart">
+                <img src="random%20bs.2%20(2).jpg" alt="Brawl Stars VP">
+                <h4>20.000 Kupa Garantili</h4>
+                <h5>RANDOM HESAP</h5>
+                <p class="fiyat">99 TL</p>
+                 <style>
+  .whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
 
-<!-- Footer -->
-<footer>
-    <p>© 2025 ZehirMedyaTR | Tüm Hakları Saklıdır.</p>
-</footer>
+  .whatsapp-btn:hover {
+    background-color: #1ebe5d;
+  }
+</style>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<body>
-<html>
+<a href="https://wa.me/66963159164?text=Merhaba  ." target="_blank" class="whatsapp-btn">Satın Al</a>
+
+   </div>
+            <div class="kart">
+                <img src="random%20bs.3%20(3).jpg" alt="Brawl Stars VP">
+                <h4>30.000 Kupa Garantili</h4>
+                <h5>RANDOM HESAP</h5>
+                <p class="fiyat">129 TL</p>
+                 <style>
+  .whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #1ebe5d;
+  }
+</style>
+
+<a href="https://wa.me/66963159164?text=Merhaba " target="_blank" class="whatsapp-btn">Satın Al</a>
+              
+          </div>
+            <div class="kart">
+                <img src="random%20bs.jpg" alt="Brawl Stars VP">
+                <h4>40.000 Kupa Garantili</h4>
+                <h5>RANDOM HESAP</h5>
+                <p class="fiyat">169 TL</p>
+                 <style>
+  .whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #1ebe5d;
+  }
+</style>
+
+<a href="https://wa.me/66963159164?text=Merhaba  ." target="_blank" class="whatsapp-btn">Satın Al</a>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="kategori" id="valorant">
+        <h3>Valorant</h3>
+        <div class="urunler">
+            <div class="kart">
+                <img src="raidant%20vp.png" alt="Reyna VP">
+                <h4>Radiant Random VP</h4>
+                <p class="fiyat">199 TL</p>
+                 <style>
+  .whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #1ebe5d;
+  }
+</style>
+
+<a href="https://wa.me/66963159164?text=Merhaba " target="_blank" class="whatsapp-btn">Satın Al</a>
+              
+            </div>
+            <div class="kart">
+                <img src="raidant%20vp%20(2).png" alt="Sage VP">
+                <h4>İmmortal Random VP</h4>
+                <p class="fiyat">179 TL</p>
+                 <style>
+  .whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #1ebe5d;
+  }
+</style>
+
+<a href="https://wa.me/66963159164?text=Merhaba " target="_blank" class="whatsapp-btn">Satın Al</a>
+              
+        </div>
+            <div class="kart">
+                <img src="raidant%20vp%20(3).png" alt="Sage VP">
+                <h4>İmmortal Random VP</h4>
+                <p class="fiyat">179 TL</p>
+                 <style>
+  .whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #1ebe5d;
+  }
+</style>
+
+<a href="https://wa.me/66963159164?text=Merhaba " target="_blank" class="whatsapp-btn">Satın Al</a>
+                      
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="kategori" id="efootball">
+        <h3>eFootball (PES)</h3>
+        <div class="urunler">
+            <div class="kart">
+                <img src="k%C4%B1sa.jpg" alt="eFootball Coins">
+                <h4>Süpriz random Efootball</h4>
+                <p class="fiyat">125 TL</p>
+            </div>
+            <div class="kart">
+                <img src="k%C4%B1sa%20(2).jpg" alt="Random eFootball Hesap">
+                <h4>Random PES Hesabı</h4>
+                <p class="fiyat">149 TL</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="kategori" id="hakkimizda">
+        <h3>Biz Kimiz?</h3>
+        <p style="max-width: 800px; margin-top: 15px; color: #ccc;">
+            ZehirMarket olarak oyunculara uygun fiyatlı ve güvenli ürünler sunmayı amaçlıyoruz. Shopier ve Papara ile kolay ödeme imkanı sunuyoruz.
+        </p>
+    </section>
+
+    <footer>
+        © 2025 ZehirMarket. Tüm hakları saklıdır.
+    </footer>
+</body>
+</html>
